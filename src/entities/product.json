@@ -1,0 +1,1192 @@
+{
+    "product": {
+        "manufacturing_places": "",
+        "categories_tags": [
+            "en:plant-based-foods-and-beverages",
+            "en:plant-based-foods",
+            "en:spreads",
+            "en:fats",
+            "en:plant-based-spreads",
+            "en:salted-spreads",
+            "en:vegetable-fats",
+            "en:spreadable-fats",
+            "en:margarines",
+            "en:unsalted-margarines"
+        ],
+        "checkers_tags": [],
+        "nova_groups": "2",
+        "quantity": "250 g",
+        "product_name_fr": "",
+        "image_front_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_de.50.400.jpg",
+        "last_edit_dates_tags": [
+            "2020-06-30",
+            "2020-06",
+            "2020"
+        ],
+        "categories_hierarchy": [
+            "en:plant-based-foods-and-beverages",
+            "en:plant-based-foods",
+            "en:spreads",
+            "en:fats",
+            "en:plant-based-spreads",
+            "en:salted-spreads",
+            "en:vegetable-fats",
+            "en:spreadable-fats",
+            "en:margarines",
+            "en:unsalted-margarines"
+        ],
+        "additives_debug_tags": [],
+        "cities_tags": [],
+        "ingredients_that_may_be_from_palm_oil_n": 0,
+        "packaging_tags": [
+            "kunststoff"
+        ],
+        "ingredients_text_with_allergens_fr": "",
+        "nutrient_levels_tags": [
+            "en:fat-in-high-quantity",
+            "en:saturated-fat-in-high-quantity",
+            "en:sugars-in-low-quantity",
+            "en:salt-in-low-quantity"
+        ],
+        "image_nutrition_thumb_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/nutrition_de.54.100.jpg",
+        "generic_name_de": "",
+        "ciqual_food_name_tags": [
+            "vegetable-fat-margarine-type-spreadable-fat-content-unknown-light-unsalted"
+        ],
+        "known_ingredients_n": 6,
+        "nutrition_score_beverage": 0,
+        "editors": [
+            "twoflower",
+            "bitnapper"
+        ],
+        "image_small_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_de.50.200.jpg",
+        "manufacturing_places_tags": [],
+        "allergens": "en:milk",
+        "ingredients_text_xx_debug_tags": [],
+        "compared_to_category": "en:unsalted-margarines",
+        "product_quantity": "250",
+        "additives_tags": [],
+        "nutrition_data": "on",
+        "ingredients_ids_debug": [
+            "butter-63",
+            "wasser",
+            "rapsol"
+        ],
+        "id": "4001954165018",
+        "images": {
+            "1": {
+                "sizes": {
+                    "100": {
+                        "h": 100,
+                        "w": 75
+                    },
+                    "400": {
+                        "h": 400,
+                        "w": 300
+                    },
+                    "full": {
+                        "h": 2666,
+                        "w": 2000
+                    }
+                },
+                "uploader": "bitnapper",
+                "uploaded_t": 1423503772
+            },
+            "2": {
+                "uploader": "bitnapper",
+                "sizes": {
+                    "100": {
+                        "w": 75,
+                        "h": 100
+                    },
+                    "400": {
+                        "h": 400,
+                        "w": 300
+                    },
+                    "full": {
+                        "h": 2666,
+                        "w": 2000
+                    }
+                },
+                "uploaded_t": 1423503783
+            },
+            "3": {
+                "sizes": {
+                    "100": {
+                        "h": 100,
+                        "w": 75
+                    },
+                    "400": {
+                        "h": 400,
+                        "w": 300
+                    },
+                    "full": {
+                        "w": 2000,
+                        "h": 2666
+                    }
+                },
+                "uploader": "bitnapper",
+                "uploaded_t": 1423503794
+            },
+            "4": {
+                "uploaded_t": "1481890199",
+                "uploader": "date-limite-app",
+                "sizes": {
+                    "100": {
+                        "w": 100,
+                        "h": 75
+                    },
+                    "400": {
+                        "h": 300,
+                        "w": 400
+                    },
+                    "full": {
+                        "h": 1000,
+                        "w": 1333
+                    }
+                }
+            },
+            "5": {
+                "uploader": "date-limite-app",
+                "sizes": {
+                    "100": {
+                        "h": 75,
+                        "w": 100
+                    },
+                    "400": {
+                        "h": 300,
+                        "w": 400
+                    },
+                    "full": {
+                        "h": 1000,
+                        "w": 1333
+                    }
+                },
+                "uploaded_t": "1482565810"
+            },
+            "6": {
+                "uploader": "foodrepo",
+                "sizes": {
+                    "100": {
+                        "w": 56,
+                        "h": 100
+                    },
+                    "400": {
+                        "w": 225,
+                        "h": 400
+                    },
+                    "full": {
+                        "w": 563,
+                        "h": 1000
+                    }
+                },
+                "uploaded_t": 1554161368
+            },
+            "7": {
+                "uploaded_t": 1554161368,
+                "sizes": {
+                    "100": {
+                        "w": 56,
+                        "h": 100
+                    },
+                    "400": {
+                        "h": 400,
+                        "w": 225
+                    },
+                    "full": {
+                        "h": 1000,
+                        "w": 563
+                    }
+                },
+                "uploader": "foodrepo"
+            },
+            "8": {
+                "uploaded_t": 1554161368,
+                "uploader": "foodrepo",
+                "sizes": {
+                    "100": {
+                        "w": 56,
+                        "h": 100
+                    },
+                    "400": {
+                        "h": 400,
+                        "w": 225
+                    },
+                    "full": {
+                        "h": 1000,
+                        "w": 563
+                    }
+                }
+            },
+            "9": {
+                "sizes": {
+                    "100": {
+                        "h": 100,
+                        "w": 56
+                    },
+                    "400": {
+                        "h": 400,
+                        "w": 225
+                    },
+                    "full": {
+                        "h": 1000,
+                        "w": 563
+                    }
+                },
+                "uploader": "foodrepo",
+                "uploaded_t": 1554161368
+            },
+            "10": {
+                "uploaded_t": "1543053655",
+                "sizes": {
+                    "100": {
+                        "h": 100,
+                        "w": 75
+                    },
+                    "400": {
+                        "h": 400,
+                        "w": 300
+                    },
+                    "full": {
+                        "w": 1000,
+                        "h": 1333
+                    }
+                },
+                "uploader": "date-limite-app"
+            },
+            "11": {
+                "uploaded_t": 1564559639,
+                "uploader": "date-limite-app",
+                "sizes": {
+                    "100": {
+                        "w": 75,
+                        "h": 100
+                    },
+                    "400": {
+                        "h": 400,
+                        "w": 300
+                    },
+                    "full": {
+                        "w": 1000,
+                        "h": 1333
+                    }
+                }
+            },
+            "12": {
+                "sizes": {
+                    "100": {
+                        "w": 100,
+                        "h": 74
+                    },
+                    "400": {
+                        "w": 400,
+                        "h": 295
+                    },
+                    "full": {
+                        "h": 295,
+                        "w": 400
+                    }
+                },
+                "uploader": "date-limite-app",
+                "uploaded_t": 1569250590
+            },
+            "13": {
+                "sizes": {
+                    "100": {
+                        "w": 100,
+                        "h": 74
+                    },
+                    "400": {
+                        "h": 295,
+                        "w": 400
+                    },
+                    "full": {
+                        "h": 295,
+                        "w": 400
+                    }
+                },
+                "uploader": "date-limite-app",
+                "uploaded_t": 1575615937
+            },
+            "14": {
+                "uploaded_t": "1575912057",
+                "uploader": "date-limite-app",
+                "sizes": {
+                    "100": {
+                        "h": 75,
+                        "w": 100
+                    },
+                    "400": {
+                        "h": 300,
+                        "w": 400
+                    },
+                    "full": {
+                        "h": 1000,
+                        "w": 1333
+                    }
+                }
+            },
+            "15": {
+                "uploaded_t": 1579351349,
+                "uploader": "adinos",
+                "sizes": {
+                    "100": {
+                        "w": 100,
+                        "h": 86
+                    },
+                    "400": {
+                        "w": 400,
+                        "h": 345
+                    },
+                    "full": {
+                        "h": 2611,
+                        "w": 3024
+                    }
+                }
+            },
+            "16": {
+                "sizes": {
+                    "100": {
+                        "w": 100,
+                        "h": 39
+                    },
+                    "400": {
+                        "w": 400,
+                        "h": 157
+                    },
+                    "full": {
+                        "h": 903,
+                        "w": 2304
+                    }
+                },
+                "uploader": "adinos",
+                "uploaded_t": 1579351383
+            },
+            "17": {
+                "uploaded_t": 1579351428,
+                "uploader": "adinos",
+                "sizes": {
+                    "100": {
+                        "h": 55,
+                        "w": 100
+                    },
+                    "400": {
+                        "w": 400,
+                        "h": 222
+                    },
+                    "full": {
+                        "h": 1403,
+                        "w": 2531
+                    }
+                }
+            },
+            "18": {
+                "uploaded_t": 1580893607,
+                "uploader": "openfoodfacts-contributors",
+                "sizes": {
+                    "100": {
+                        "w": 100,
+                        "h": 66
+                    },
+                    "400": {
+                        "h": 265,
+                        "w": 400
+                    },
+                    "full": {
+                        "w": 1960,
+                        "h": 1299
+                    }
+                }
+            },
+            "19": {
+                "uploaded_t": 1585595707,
+                "uploader": "date-limite-app",
+                "sizes": {
+                    "100": {
+                        "h": 74,
+                        "w": 100
+                    },
+                    "400": {
+                        "w": 400,
+                        "h": 295
+                    },
+                    "full": {
+                        "h": 738,
+                        "w": 1000
+                    }
+                }
+            },
+            "front_de": {
+                "sizes": {
+                    "100": {
+                        "h": 86,
+                        "w": 100
+                    },
+                    "200": {
+                        "h": 173,
+                        "w": 200
+                    },
+                    "400": {
+                        "w": 400,
+                        "h": 345
+                    },
+                    "full": {
+                        "w": 3024,
+                        "h": 2611
+                    }
+                },
+                "x2": null,
+                "y2": null,
+                "y1": null,
+                "geometry": "0x0-0-0",
+                "white_magic": null,
+                "normalize": null,
+                "imgid": "15",
+                "x1": null,
+                "rev": "50",
+                "angle": null
+            },
+            "nutrition": {
+                "white_magic": null,
+                "sizes": {
+                    "100": {
+                        "h": 59,
+                        "w": 100
+                    },
+                    "200": {
+                        "h": 119,
+                        "w": 200
+                    },
+                    "400": {
+                        "h": 237,
+                        "w": 400
+                    },
+                    "full": {
+                        "h": 906,
+                        "w": 1526
+                    }
+                },
+                "normalize": null,
+                "geometry": "1526x906-113-760",
+                "imgid": "2",
+                "rev": "8"
+            },
+            "front": {
+                "geometry": "2086x1540-301-195",
+                "imgid": "1",
+                "rev": "12",
+                "white_magic": "false",
+                "sizes": {
+                    "100": {
+                        "w": 100,
+                        "h": 74
+                    },
+                    "200": {
+                        "h": 148,
+                        "w": 200
+                    },
+                    "400": {
+                        "w": 400,
+                        "h": 295
+                    },
+                    "full": {
+                        "w": 2086,
+                        "h": 1540
+                    }
+                },
+                "normalize": "true"
+            },
+            "ingredients_de": {
+                "imgid": "16",
+                "x1": null,
+                "angle": null,
+                "rev": "52",
+                "white_magic": null,
+                "normalize": null,
+                "geometry": "0x0-0-0",
+                "sizes": {
+                    "100": {
+                        "w": 100,
+                        "h": 39
+                    },
+                    "200": {
+                        "h": 78,
+                        "w": 200
+                    },
+                    "400": {
+                        "w": 400,
+                        "h": 157
+                    },
+                    "full": {
+                        "h": 903,
+                        "w": 2304
+                    }
+                },
+                "y2": null,
+                "x2": null,
+                "y1": null
+            },
+            "ingredients": {
+                "normalize": "checked",
+                "sizes": {
+                    "100": {
+                        "h": 21,
+                        "w": 100
+                    },
+                    "200": {
+                        "w": 200,
+                        "h": 42
+                    },
+                    "400": {
+                        "w": 400,
+                        "h": 84
+                    },
+                    "full": {
+                        "w": 2106,
+                        "h": 440
+                    }
+                },
+                "white_magic": null,
+                "rev": "9",
+                "imgid": "2",
+                "geometry": "2106x440-126-346"
+            },
+            "nutrition_de": {
+                "rev": "54",
+                "angle": null,
+                "x1": null,
+                "imgid": "17",
+                "normalize": null,
+                "white_magic": null,
+                "geometry": "0x0-0-0",
+                "y1": null,
+                "x2": null,
+                "sizes": {
+                    "100": {
+                        "w": 100,
+                        "h": 55
+                    },
+                    "200": {
+                        "h": 111,
+                        "w": 200
+                    },
+                    "400": {
+                        "h": 222,
+                        "w": 400
+                    },
+                    "full": {
+                        "h": 1403,
+                        "w": 2531
+                    }
+                },
+                "y2": null
+            },
+            "front_fr": {
+                "normalize": null,
+                "white_magic": null,
+                "angle": 0,
+                "rev": "16",
+                "imgid": "4",
+                "x1": -1,
+                "y1": -1,
+                "x2": -1,
+                "y2": -1,
+                "sizes": {
+                    "100": {
+                        "h": 75,
+                        "w": 100
+                    },
+                    "200": {
+                        "w": 200,
+                        "h": 150
+                    },
+                    "400": {
+                        "h": 300,
+                        "w": 400
+                    },
+                    "full": {
+                        "w": 1333,
+                        "h": 1000
+                    }
+                },
+                "geometry": "0x0--3--3"
+            }
+        },
+        "category_properties": {
+            "ciqual_food_name:en": "Vegetable fat -margarine type-, spreadable, fat content unknown, light, unsalted",
+            "ciqual_food_name:fr": "Matière grasse végétale -type margarine-, teneur en matière grasse inconue, doux -aliment moyen-"
+        },
+        "traces_from_user": "(de) ",
+        "ingredients_text_de": "Butter (63%), Wasser, Rapsöl (13%). Gesamtfettgehalt 65%, davon 80% Butterfett und 20% Pflanzenfett.",
+        "update_key": "key-20200703",
+        "ingredients_text_with_allergens": "<span class=\"allergen\">Butter</span> (63%), Wasser, Rapsöl (13%). Gesamtfettgehalt 65%, davon 80% Butterfett und 20% Pflanzenfett.",
+        "additives_tags_n": null,
+        "countries": "Tschechien, Deutschland, en:hu",
+        "image_front_small_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_de.50.200.jpg",
+        "created_t": 1423503771,
+        "nutriscore_data": {
+            "sodium": 8,
+            "saturated_fat_ratio_value": 53.8,
+            "is_beverage": 0,
+            "fiber_points": 0,
+            "is_cheese": 0,
+            "sugars_value": 0.5,
+            "fiber": 0,
+            "energy_value": 2422,
+            "saturated_fat_ratio_points": 8,
+            "sugars_points": 0,
+            "fiber_value": 0,
+            "sodium_points": 0,
+            "fruits_vegetables_nuts_colza_walnut_olive_oils_value": 0,
+            "proteins_points": 0,
+            "energy": 2422,
+            "is_water": 0,
+            "saturated_fat_value": 35,
+            "energy_points": 7,
+            "fruits_vegetables_nuts_colza_walnut_olive_oils": 0,
+            "proteins_value": 0.5,
+            "sugars": 0.5,
+            "fruits_vegetables_nuts_colza_walnut_olive_oils_points": 0,
+            "grade": "d",
+            "negative_points": 15,
+            "sodium_value": 8,
+            "saturated_fat_points": 10,
+            "is_fat": 1,
+            "proteins": 0.5,
+            "saturated_fat_ratio": 53.8461538461538,
+            "score": 15,
+            "saturated_fat": 35,
+            "positive_points": 0
+        },
+        "stores": "",
+        "misc_tags": [
+            "en:nutrition-no-fiber",
+            "en:nutrition-fruits-vegetables-nuts-estimate-from-ingredients",
+            "en:nutrition-no-fiber-or-fruits-vegetables-nuts",
+            "en:nutriscore-computed"
+        ],
+        "completeness": 1,
+        "states_hierarchy": [
+            "en:to-be-checked",
+            "en:complete",
+            "en:nutrition-facts-completed",
+            "en:ingredients-completed",
+            "en:expiration-date-completed",
+            "en:packaging-code-completed",
+            "en:characteristics-completed",
+            "en:categories-completed",
+            "en:brands-completed",
+            "en:packaging-completed",
+            "en:quantity-completed",
+            "en:product-name-completed",
+            "en:photos-validated",
+            "en:photos-uploaded"
+        ],
+        "labels_tags": [],
+        "last_modified_by": "date-limite-app",
+        "vitamins_tags": [],
+        "nova_groups_tags": [
+            "en:2-processed-culinary-ingredients"
+        ],
+        "product_name_xx_debug_tags": [],
+        "traces_hierarchy": [],
+        "complete": 1,
+        "amino_acids_prev_tags": [],
+        "nutrition_grades_tags": [
+            "d"
+        ],
+        "no_nutrition_data": "",
+        "ingredients_from_palm_oil_n": 0,
+        "unknown_ingredients_n": 2,
+        "generic_name_xx": "",
+        "unknown_nutrients_tags": [],
+        "image_thumb_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_de.50.100.jpg",
+        "origins_tags": [],
+        "languages": {
+            "en:french": 1,
+            "en:german": 5
+        },
+        "scans_n": 202,
+        "stores_tags": [],
+        "new_additives_n": 0,
+        "purchase_places": "",
+        "emb_codes_orig": "DE NW 40015 EC",
+        "image_ingredients_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/ingredients_de.52.400.jpg",
+        "nova_group": 2,
+        "popularity_key": -80004999852,
+        "image_ingredients_small_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/ingredients_de.52.200.jpg",
+        "product_name_debug_tags": [],
+        "categories_lc": "de",
+        "generic_name_fr": "",
+        "languages_hierarchy": [
+            "en:french",
+            "en:german"
+        ],
+        "data_quality_info_tags": [],
+        "allergens_from_user": "(en) en:milk",
+        "generic_name_xx_debug_tags": [],
+        "nutrition_data_per": "100g",
+        "creator": "bitnapper",
+        "brands_tags": [
+            "kerrygold"
+        ],
+        "interface_version_modified": "20150316.jqm2",
+        "ingredients_analysis_tags": [
+            "en:palm-oil-content-unknown",
+            "en:non-vegan",
+            "en:vegetarian-status-unknown"
+        ],
+        "nova_group_debug": " -- categories/en:fats : 2",
+        "expiration_date": "21/10/2018",
+        "nutrition_score_warning_no_fiber": 1,
+        "ingredients_text_fr": "",
+        "nutrition_grades": "d",
+        "editors_tags": [
+            "tacite-mass-editor",
+            "date-limite-app",
+            "twoflower",
+            "smias",
+            "tacite",
+            "roboto-app",
+            "openfoodfacts-contributors",
+            "moon-rabbit",
+            "bitnapper",
+            "foodrepo",
+            "adinos"
+        ],
+        "debug_param_sorted_langs": [
+            "de",
+            "fr"
+        ],
+        "nutrient_levels": {
+            "saturated-fat": "high",
+            "salt": "low",
+            "sugars": "low",
+            "fat": "high"
+        },
+        "pnns_groups_1_tags": [
+            "salty-snacks",
+            "known"
+        ],
+        "nutriscore_score": 15,
+        "additives_original_tags": [],
+        "packaging": "kunststoff",
+        "allergens_lc": "en",
+        "ingredients_n": 5,
+        "nutrition_score_warning_fruits_vegetables_nuts_estimate_from_ingredients": 1,
+        "link": "www.kerrygold.de",
+        "pnns_groups_2_tags": [
+            "salty-and-fatty-products",
+            "known"
+        ],
+        "traces": "",
+        "obsolete": "",
+        "nutriscore_grade": "d",
+        "image_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_de.50.400.jpg",
+        "interface_version_created": "20120622",
+        "fruits-vegetables-nuts_100g_estimate": 0,
+        "allergens_hierarchy": [
+            "en:milk"
+        ],
+        "additives_old_tags": [],
+        "ingredients_that_may_be_from_palm_oil_tags": [],
+        "ingredients_text_with_allergens_de": "<span class=\"allergen\">Butter</span> (63%), Wasser, Rapsöl (13%). Gesamtfettgehalt 65%, davon 80% Butterfett und 20% Pflanzenfett.",
+        "data_quality_warnings_tags": [
+            "en:ingredients-percent-analysis-not-ok",
+            "en:nutrition-value-under-0-1-g-salt"
+        ],
+        "traces_lc": "de",
+        "labels_hierarchy": [],
+        "emb_codes_tags": [
+            "de-nw-40015-ec"
+        ],
+        "purchase_places_tags": [],
+        "nutrition_data_prepared_per": "100g",
+        "countries_lc": "de",
+        "image_nutrition_small_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/nutrition_de.54.200.jpg",
+        "selected_images": {
+            "nutrition": {
+                "thumb": {
+                    "de": "https://static.openfoodfacts.org/images/products/400/195/416/5018/nutrition_de.54.100.jpg"
+                },
+                "small": {
+                    "de": "https://static.openfoodfacts.org/images/products/400/195/416/5018/nutrition_de.54.200.jpg"
+                },
+                "display": {
+                    "de": "https://static.openfoodfacts.org/images/products/400/195/416/5018/nutrition_de.54.400.jpg"
+                }
+            },
+            "ingredients": {
+                "small": {
+                    "de": "https://static.openfoodfacts.org/images/products/400/195/416/5018/ingredients_de.52.200.jpg"
+                },
+                "thumb": {
+                    "de": "https://static.openfoodfacts.org/images/products/400/195/416/5018/ingredients_de.52.100.jpg"
+                },
+                "display": {
+                    "de": "https://static.openfoodfacts.org/images/products/400/195/416/5018/ingredients_de.52.400.jpg"
+                }
+            },
+            "front": {
+                "small": {
+                    "de": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_de.50.200.jpg",
+                    "fr": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_fr.16.200.jpg"
+                },
+                "thumb": {
+                    "de": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_de.50.100.jpg",
+                    "fr": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_fr.16.100.jpg"
+                },
+                "display": {
+                    "fr": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_fr.16.400.jpg",
+                    "de": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_de.50.400.jpg"
+                }
+            }
+        },
+        "additives_prev_original_tags": [],
+        "countries_hierarchy": [
+            "en:czech-republic",
+            "en:germany",
+            "en:hungary"
+        ],
+        "image_nutrition_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/nutrition_de.54.400.jpg",
+        "ingredients": [
+            {
+                "rank": 1,
+                "vegan": "no",
+                "id": "en:butter",
+                "percent": "63",
+                "vegetarian": "yes",
+                "text": "Butter"
+            },
+            {
+                "id": "en:water",
+                "rank": 2,
+                "vegan": "yes",
+                "text": "Wasser",
+                "vegetarian": "yes"
+            },
+            {
+                "rank": 3,
+                "vegan": "yes",
+                "id": "en:rapeseed-oil",
+                "from_palm_oil": "no",
+                "percent": "13",
+                "vegetarian": "yes",
+                "text": "Rapsöl"
+            },
+            {
+                "percent": "65",
+                "text": "Gesamtfettgehalt",
+                "rank": 4,
+                "id": "de:Gesamtfettgehalt"
+            },
+            {
+                "rank": 5,
+                "id": "de:davon 80 % Butterfett und 20 % Pflanzenfett",
+                "text": "davon 80% Butterfett und 20% Pflanzenfett"
+            }
+        ],
+        "other_nutritional_substances_tags": [],
+        "allergens_tags": [
+            "en:milk"
+        ],
+        "amino_acids_tags": [],
+        "unique_scans_n": 139,
+        "entry_dates_tags": [
+            "2015-02-09",
+            "2015-02",
+            "2015"
+        ],
+        "pnns_groups_2": "Salty and fatty products",
+        "additives_n": 0,
+        "ingredients_text": "Butter (63%), Wasser, Rapsöl (13%). Gesamtfettgehalt 65%, davon 80% Butterfett und 20% Pflanzenfett.",
+        "states": "en:to-be-checked, en:complete, en:nutrition-facts-completed, en:ingredients-completed, en:expiration-date-completed, en:packaging-code-completed, en:characteristics-completed, en:categories-completed, en:brands-completed, en:packaging-completed, en:quantity-completed, en:product-name-completed, en:photos-validated, en:photos-uploaded",
+        "states_tags": [
+            "en:to-be-checked",
+            "en:complete",
+            "en:nutrition-facts-completed",
+            "en:ingredients-completed",
+            "en:expiration-date-completed",
+            "en:packaging-code-completed",
+            "en:characteristics-completed",
+            "en:categories-completed",
+            "en:brands-completed",
+            "en:packaging-completed",
+            "en:quantity-completed",
+            "en:product-name-completed",
+            "en:photos-validated",
+            "en:photos-uploaded"
+        ],
+        "max_imgid": "19",
+        "last_modified_t": 1593530299,
+        "ingredients_hierarchy": [
+            "en:butter",
+            "en:dairy",
+            "en:water",
+            "en:rapeseed-oil",
+            "en:oil-and-fat",
+            "en:vegetable-oil-and-fat",
+            "de:Gesamtfettgehalt",
+            "de:davon 80 % Butterfett und 20 % Pflanzenfett"
+        ],
+        "brands": "Kerrygold",
+        "nutrition_data_prepared": "",
+        "nucleotides_tags": [],
+        "traces_from_ingredients": "",
+        "ingredients_tags": [
+            "en:butter",
+            "en:dairy",
+            "en:water",
+            "en:rapeseed-oil",
+            "en:oil-and-fat",
+            "en:vegetable-oil-and-fat",
+            "de:gesamtfettgehalt",
+            "de:davon-80-butterfett-und-20-pflanzenfett"
+        ],
+        "minerals_prev_tags": [],
+        "ingredients_original_tags": [
+            "en:butter",
+            "en:water",
+            "en:rapeseed-oil",
+            "de:Gesamtfettgehalt",
+            "de:davon 80 % Butterfett und 20 % Pflanzenfett"
+        ],
+        "data_quality_bugs_tags": [],
+        "categories": "Pflanzliche Lebensmittel und Getränke,Pflanzliche Lebensmittel,Brotaufstriche,Fette,Pflanzliche Brotaufstriche,Gesalzene Aufstriche,Pflanzenfette,Streichfette (Milch- und Nichtmilcherzeugnisse),Margarinen,en:unsalted-margarines",
+        "last_image_t": 1585595707,
+        "ingredients_text_debug": "Butter 63%, Wasser, Rapsöl ",
+        "languages_tags": [
+            "en:french",
+            "en:german",
+            "en:2",
+            "en:multilingual"
+        ],
+        "rev": 63,
+        "popularity_tags": [
+            "top-5000-scans-2020",
+            "top-10000-scans-2020",
+            "top-50000-scans-2020",
+            "top-100000-scans-2020",
+            "at-least-5-scans-2020",
+            "at-least-10-scans-2020",
+            "top-90-percent-scans-2020",
+            "top-95-percent-scans-2020",
+            "top-500-de-scans-2020",
+            "top-1000-de-scans-2020",
+            "top-5000-de-scans-2020",
+            "top-10000-de-scans-2020",
+            "top-50000-de-scans-2020",
+            "top-100000-de-scans-2020",
+            "top-country-de-scans-2020",
+            "at-least-5-de-scans-2020",
+            "at-least-10-de-scans-2020",
+            "top-5000-scans-2019",
+            "top-10000-scans-2019",
+            "top-50000-scans-2019",
+            "top-100000-scans-2019",
+            "at-least-5-scans-2019",
+            "at-least-10-scans-2019",
+            "top-90-percent-scans-2019",
+            "top-95-percent-scans-2019",
+            "top-1000-de-scans-2019",
+            "top-5000-de-scans-2019",
+            "top-10000-de-scans-2019",
+            "top-50000-de-scans-2019",
+            "top-100000-de-scans-2019",
+            "top-country-de-scans-2019",
+            "at-least-5-de-scans-2019",
+            "at-least-10-de-scans-2019",
+            "top-5000-fr-scans-2019",
+            "top-10000-fr-scans-2019",
+            "top-50000-fr-scans-2019",
+            "top-100000-fr-scans-2019",
+            "top-1000-es-scans-2019",
+            "top-5000-es-scans-2019",
+            "top-10000-es-scans-2019",
+            "top-50000-es-scans-2019",
+            "top-100000-es-scans-2019",
+            "top-5000-ch-scans-2019",
+            "top-10000-ch-scans-2019",
+            "top-50000-ch-scans-2019",
+            "top-100000-ch-scans-2019"
+        ],
+        "last_image_dates_tags": [
+            "2020-03-30",
+            "2020-03",
+            "2020"
+        ],
+        "correctors_tags": [
+            "bitnapper",
+            "twoflower",
+            "date-limite-app",
+            "smias",
+            "tacite",
+            "tacite-mass-editor",
+            "moon-rabbit",
+            "openfoodfacts-contributors",
+            "adinos"
+        ],
+        "product_name_xx": "",
+        "countries_tags": [
+            "en:czech-republic",
+            "en:germany",
+            "en:hungary"
+        ],
+        "generic_name": "",
+        "code": "4001954165018",
+        "image_front_thumb_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/front_de.50.100.jpg",
+        "completed_t": 1493544022,
+        "emb_codes_20141016": "DE NW 40015 EC",
+        "nutriments": {
+            "salt": 0.02,
+            "nova-group_100g": 2,
+            "saturated-fat_unit": "g",
+            "proteins_value": 0.5,
+            "nutrition-score-fr_100g": 15,
+            "energy_unit": "kJ",
+            "carbohydrates_unit": "g",
+            "salt_value": 0.02,
+            "fat_100g": 65,
+            "energy-kj_unit": "kJ",
+            "energy-kj": 2422,
+            "sugars_100g": 0.5,
+            "sugars": 0.5,
+            "energy-kj_100g": 2422,
+            "proteins_100g": 0.5,
+            "proteins": 0.5,
+            "sodium_value": 0.008,
+            "sugars_unit": "g",
+            "salt_100g": 0.02,
+            "carbohydrates": 0.5,
+            "energy-kcal_unit": "kcal",
+            "energy_100g": 2422,
+            "fat": 65,
+            "sodium_100g": 0.008,
+            "saturated-fat": 35,
+            "energy-kj_value": 2422,
+            "salt_unit": "g",
+            "proteins_unit": "g",
+            "sodium": 0.008,
+            "sodium_unit": "g",
+            "nova-group": 2,
+            "energy-kcal_100g": 589,
+            "energy-kcal_value": 589,
+            "energy-kcal": 589,
+            "fat_unit": "g",
+            "energy_value": 2422,
+            "nova-group_serving": 2,
+            "sugars_value": 0.5,
+            "carbohydrates_value": 0.5,
+            "saturated-fat_100g": 35,
+            "energy": 2422,
+            "saturated-fat_value": 35,
+            "fruits-vegetables-nuts-estimate-from-ingredients_100g": 0,
+            "fat_value": 65,
+            "carbohydrates_100g": 0.5,
+            "nutrition-score-fr": 15
+        },
+        "traces_tags": [],
+        "ingredients_from_palm_oil_tags": [],
+        "ingredients_n_tags": [
+            "5",
+            "1-10"
+        ],
+        "data_quality_tags": [
+            "en:ingredients-percent-analysis-not-ok",
+            "en:nutrition-value-under-0-1-g-salt"
+        ],
+        "sortkey": -98406469701,
+        "image_ingredients_thumb_url": "https://static.openfoodfacts.org/images/products/400/195/416/5018/ingredients_de.52.100.jpg",
+        "product_name": "Kerrygold extra ungesalzen",
+        "nutrition_grade_fr": "d",
+        "obsolete_since_date": "",
+        "_id": "4001954165018",
+        "last_editor": "date-limite-app",
+        "nucleotides_prev_tags": [],
+        "ingredients_text_xx": "",
+        "additives_old_n": 0,
+        "codes_tags": [
+            "code-13",
+            "4001954165xxx",
+            "400195416xxxx",
+            "40019541xxxxx",
+            "4001954xxxxxx",
+            "400195xxxxxxx",
+            "40019xxxxxxxx",
+            "4001xxxxxxxxx",
+            "400xxxxxxxxxx",
+            "40xxxxxxxxxxx",
+            "4xxxxxxxxxxxx"
+        ],
+        "labels_lc": "de",
+        "lc": "de",
+        "informers_tags": [
+            "bitnapper",
+            "twoflower",
+            "date-limite-app",
+            "tacite",
+            "tacite-mass-editor",
+            "roboto-app",
+            "moon-rabbit",
+            "adinos"
+        ],
+        "labels": "",
+        "emb_codes": "DE NW-40015 EG",
+        "ingredients_debug": [
+            "Butter 63%",
+            ",",
+            null,
+            null,
+            null,
+            " Wasser",
+            ",",
+            null,
+            null,
+            null,
+            " Rapsöl "
+        ],
+        "allergens_from_ingredients": "Butter",
+        "ingredients_from_or_that_may_be_from_palm_oil_n": 0,
+        "photographers_tags": [
+            "bitnapper",
+            "date-limite-app",
+            "foodrepo",
+            "adinos",
+            "openfoodfacts-contributors"
+        ],
+        "_keywords": [
+            "lebensmittel",
+            "fette",
+            "pflanzliche",
+            "kerrygold",
+            "margarinen",
+            "pflanzenfette",
+            "unsalted-margarine",
+            "nichtmilcherzeugnisse",
+            "streichfette",
+            "getränke",
+            "ungesalzen",
+            "milch",
+            "brotaufstriche",
+            "und",
+            "aufstriche",
+            "gesalzene",
+            "extra"
+        ],
+        "minerals_tags": [],
+        "lang": "de",
+        "pnns_groups_1": "Salty snacks",
+        "data_quality_errors_tags": [],
+        "origins": "",
+        "product_name_de": "Kerrygold extra ungesalzen",
+        "vitamins_prev_tags": [],
+        "languages_codes": {
+            "fr": 1,
+            "de": 5
+        },
+        "nutrition_score_warning_fruits_vegetables_nuts_estimate_from_ingredients_value": 0
+    },
+    "code": "4001954165018",
+    "status_verbose": "product found",
+    "status": 1
+}
