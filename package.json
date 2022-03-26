@@ -1,62 +1,38 @@
 {
-    "name": "octacmsibmo",
-    "private": true,
-    "version": "0.0.1",
-    "description": "octacmsibmo",
-    "license": "MIT",
-    "files": [
-        "dist/"
+  "name": "party-planner-pp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.16.3",
+    "@testing-library/react": "^12.1.4",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "5.0.0",
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
-    "scripts": {
-        "lint": "npm run eslint && npm run prettier -- --check",
-        "fmt": "npm run eslint -- --fix && npm run prettier -- --write",
-        "prettier": "prettier \"**/*.ts\"",
-        "eslint": "eslint . --ext .ts",
-        "build": "stencil build",
-        "start": "stencil build --dev --watch --serve",
-        "test.unit": "jest",
-        "test.unit.watch": "jest --watch",
-        "test.e2e": "stencil test --spec --e2e",
-        "test.e2e.watch": "stencil test --spec --e2e --watch",
-        "generate": "stencil generate"
-    },
-    "dependencies": {
-        "@capacitor/android": "^3.4.1",
-        "@capacitor/cli": "^3.4.1",
-        "@capacitor/core": "^3.4.1",
-        "@capacitor/ios": "^3.4.1",
-        "@capacitor/storage": "^1.2.4",
-        "@ionic/core": "^6.0.9",
-        "@stencil/router": "^1.0.1",
-        "@zxing/library": "^0.19.1",
-        "date-fns": "^2.28.0",
-        "prettier": "^2.5.1",
-        "tesseract.js": "^2.1.5"
-    },
-    "devDependencies": {
-        "@ionic/eslint-config": "^0.3.0",
-        "@ionic/prettier-config": "^2.0.0",
-        "@stencil/core": "^2.14.0",
-        "@stencil/eslint-plugin": "^0.4.0",
-        "@stencil/store": "^1.5.0",
-        "@types/jest": "^27.4.1",
-        "@types/puppeteer": "5.4.5",
-        "@typescript-eslint/eslint-plugin": "^4.0.0",
-        "@typescript-eslint/parser": "^4.0.0",
-        "eslint": "^7.0.0",
-        "husky": "^7.0.4",
-        "jest": "^27.5.1",
-        "jest-cli": "27.5.1",
-        "puppeteer": "13.4.0",
-        "typescript": "^4.5.5"
-    },
-    "prettier": "@ionic/prettier-config",
-    "eslintConfig": {
-        "extends": "@ionic/eslint-config/recommended"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm run lint"
-        }
-    }
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
