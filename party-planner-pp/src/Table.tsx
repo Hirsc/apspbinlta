@@ -18,16 +18,7 @@ function createData(
   saturday: boolean,
   sunday: boolean
 ) {
-  return {
-    name,
-    monday,
-    tuesday,
-    wednesday,
-    thursday,
-    friday,
-    saturday,
-    sunday,
-  };
+  return { name, monday, tuesday, wednesday, thursday, friday, saturday, sunday};
 }
 
 const rows = [
@@ -41,29 +32,14 @@ const spalten = rows.reduce(
   (acc, row, index) => {
     acc["monday"] = row.monday === true ? acc["monday"] + 1 : acc["monday"];
     acc["tuesday"] = row.tuesday === true ? acc["tuesday"] + 1 : acc["tuesday"];
-    acc["wednesday"] =
-      row.wednesday === true ? acc["wednesday"] + 1 : acc["wednesday"];
-    acc["thursday"] =
-      row.thursday === true ? acc["thursday"] + 1 : acc["thursday"];
+    acc["wednesday"] = row.wednesday === true ? acc["wednesday"] + 1 : acc["wednesday"];
+    acc["thursday"] = row.thursday === true ? acc["thursday"] + 1 : acc["thursday"];
     acc["friday"] = row.friday === true ? acc["friday"] + 1 : acc["friday"];
-    acc["saturday"] =
-      row.saturday === true ? acc["saturday"] + 1 : acc["saturday"];
+    acc["saturday"] = row.saturday === true ? acc["saturday"] + 1 : acc["saturday"];
     acc["sunday"] = row.sunday === true ? acc["sunday"] + 1 : acc["sunday"];
-
     return acc;
-  },
-  {
-    monday: 0,
-    tuesday: 0,
-    wednesday: 0,
-    thursday: 0,
-    friday: 0,
-    saturday: 0,
-    sunday: 0,
-  }
+  },{monday: 0, tuesday: 0, wednesday: 0, thursday: 0, friday: 0, saturday: 0, sunday: 0,}
 );
-
-console.log([1, 2, 3, 4].reduce((acc, value) => acc + value));
 
 export default function BasicTable() {
   return (
@@ -126,22 +102,22 @@ export default function BasicTable() {
               <b>Total:</b> {spalten.monday}
             </TableCell>
             <TableCell align="right">
-              <b>Total:</b> {total}
+              <b>Total:</b> {spalten.tuesday}
             </TableCell>
             <TableCell align="right">
-              <b>Total:</b> {total}
+              <b>Total:</b> {spalten.wednesday}
             </TableCell>
             <TableCell align="right">
-              <b>Total:</b> {total}
+              <b>Total:</b> {spalten.thursday}
             </TableCell>
             <TableCell align="right">
-              <b>Total:</b> {total}
+              <b>Total:</b> {spalten.friday}
             </TableCell>
             <TableCell align="right">
-              <b>Total:</b> {total}
+              <b>Total:</b> {spalten.saturday}
             </TableCell>
             <TableCell align="right">
-              <b>Total:</b> {total}
+              <b>Total:</b> {spalten.sunday}
             </TableCell>
           </TableRow>
         </TableBody>
