@@ -1,6 +1,6 @@
 version: "3.6"
 networks:
-    partyplannerpp:
+    apsbpinlta:
         driver: bridge
 services:
     proxy:

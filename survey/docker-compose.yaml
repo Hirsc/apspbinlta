@@ -1,34 +1,16 @@
 version: '3.8'
 services:
   survey:
-    image: survey
+    image: hirsc/apsbpinlta.survey
     build:
         context: .
         target: production
         dockerfile: ./Dockerfile
     command: npm run start:prod
     ports:
-        - 3000:3000
+        - 3001:3001
         - 9229:9229
     volumes:
         - .:/usr/src/app
         - /usr/src/app/node_modules
     restart: unless-stopped
-  survey-dev:
-    image: survey-dev
-    build:
-        context: .
-        target: development
-        dockerfile: ./Dockerfile
-    command: npm run start:debug
-    ports:
-        - 3000:3000
-        - 9229:9229
-    networks:
-        - apspbinlta
-    volumes:
-        - .:/usr/src/app
-        - /usr/src/app/node_modules
-    restart: unless-stopped
-networks:
-    apspbinlta:

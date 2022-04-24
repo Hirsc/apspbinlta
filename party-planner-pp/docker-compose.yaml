@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  party-planner-pp:
+    image: hirsc/apsbpinlta.party-planner-pp
+    build:
+      context: .
+      target: production
