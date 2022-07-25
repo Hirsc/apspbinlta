@@ -2,26 +2,31 @@ defaultEntryPoints = ["http","ws"]
 
 [entryPoints.web]
   address = ":7000"
-  [entryPoints.web.http.redirections.entryPoint]
-    to = "websecure"
-    scheme = "https"
 
 [entryPoints.websecure]
   address = ":443"
 
+[log]
+  level = "DEBUG"
 [api]
   debug = true
+  insecure = true
+  dashboard = true
 
-[http.routers]
-  [http.routers.router0]
-    rule = "Host(`host.*`) && PathPrefix(`/`)"
+[web.routers]
+  [web.routers.router0]
+    rule = "HostRegexp(`{host:.*}`) && PathPrefix(`/`)"
     service = "party-planner-pp"
-  [http.routers.router1]
-    rule = "Host(`host.*`) && PathPrefix(`/survey`)"
+  [web.routers.router1]
+    rule = "HostRegexp(`{host:.*}`) && PathPrefix(`/survey`)"
     service = "survey"
 
-[http.services]
-  [[http.services.survery.loadBalancer.servers]]
-    url = "http://host.docker.internal:3000"
-  [[http.services.party-planner-pp.loadBalancer.servers]]
+[web.middlewares]
+  [web.middlewares.survey-stripPrefix.stripPrefix]
+    prefixes = ["/survey"]
+
+[web.services]
+  [[web.services.party-planner-pp.loadBalancer.servers]]
     url = "http://host.docker.internal:3006"
+  [[web.services.survery.loadBalancer.servers]]
+    url = "http://host.docker.internal:3001"

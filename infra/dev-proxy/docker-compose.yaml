@@ -7,10 +7,9 @@ services:
         image: "traefik:v2.5.2"
         ports:
             - "7000:7000" # open this
-            - "9999:9999" # traefik ui
+            - "8080:8080" # traefik ui
         volumes:
             - ./traefik.toml:/etc/traefik/traefik.toml
-        networks:
-            - partyplannerpp
+        # network_mode: host
         extra_hosts:
-            - host.docker.internal:172.19.0.1
+            - host.docker.internal:172.17.0.1
