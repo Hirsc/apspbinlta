@@ -1,32 +1,20 @@
 defaultEntryPoints = ["http","ws"]
 
-[entryPoints.web]
-  address = ":7000"
+[entryPoints]
+  [entryPoints.web]
+    address = ":7000"
+  [entryPoints.ws]
+    address = ":443"
 
-[entryPoints.websecure]
-  address = ":443"
+[providers]
+  # Enable the file provider to define routers / middlewares / services in file
+  [providers.file]
+    directory = "/etc/traefik/config"
 
 [log]
   level = "DEBUG"
+
 [api]
   debug = true
   insecure = true
   dashboard = true
-
-[web.routers]
-  [web.routers.router0]
-    rule = "HostRegexp(`{host:.*}`) && PathPrefix(`/`)"
-    service = "party-planner-pp"
-  [web.routers.router1]
-    rule = "HostRegexp(`{host:.*}`) && PathPrefix(`/survey`)"
-    service = "survey"
-
-[web.middlewares]
-  [web.middlewares.survey-stripPrefix.stripPrefix]
-    prefixes = ["/survey"]
-
-[web.services]
-  [[web.services.party-planner-pp.loadBalancer.servers]]
-    url = "http://host.docker.internal:3006"
-  [[web.services.survery.loadBalancer.servers]]
-    url = "http://host.docker.internal:3001"

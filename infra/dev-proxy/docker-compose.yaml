@@ -7,9 +7,20 @@ services:
         image: "traefik:v2.5.2"
         ports:
             - "7000:7000" # open this
+            - "433:433"
             - "8080:8080" # traefik ui
         volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
             - ./traefik.toml:/etc/traefik/traefik.toml
+            - ./config/dynamic.toml:/etc/traefik/config/dynamic.toml
+            - ./logs:/var/log/traefik
         # network_mode: host
         extra_hosts:
-            - host.docker.internal:172.17.0.1
+            - "host.docker.internal:host-gateway"
+
+    whoami:
+        image: containous/whoami
+        labels:
+            - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
+            - "traefik.http.routers.whoami.entrypoints=websecure"
+            - "traefik.http.routers.whoami.tls=true"

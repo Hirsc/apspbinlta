@@ -1,0 +1,21 @@
+
+[http.routers]
+  [http.routers.Router-0]
+    rule = "HostRegexp(`{host:.*}`) && PathPrefix(`/`)"
+    service = "party-planner-pp"
+  [http.routers.Router-1]
+    rule = "HostRegexp(`{host:.*}`) && PathPrefix(`/survey`)"
+    middlewares = ["survey-stripPrefix"]
+    service = "survey"
+
+[http.middlewares]
+  [http.middlewares.survey-stripPrefix.stripPrefix]
+    prefixes = ["/survey"]
+
+[http.services]
+  [http.services.party-planner-pp.loadBalancer]
+    [[http.services.party-planner-pp.loadBalancer.servers]]
+      url = "http://host.docker.internal:3006/"
+  [http.services.survey.loadBalancer]
+    [[http.services.survey.loadBalancer.servers]]
+      url = "http://host.docker.internal:3001/"
