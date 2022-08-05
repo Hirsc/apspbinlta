@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
-import { Survey, Entry } from './survey'
+import { Survey, Entry, AddEntry, getDefaultWeekdays } from './survey'
 
 describe('Survey', () => {
     let appController: AppController
@@ -22,42 +22,22 @@ describe('Survey', () => {
                 expect(result).toStrictEqual(emptyArray)
             })
         })
-        // describe('saving weekdays with wrong length throws error', () => {
-        //     it('should return an survey array', () => {
-        //         const toBeSaved: Survey = [
-        //             {
-        //                 name: 'Kai',
-        //                 weekdays: [true, false],
-        //             },
-        //         ]
-        //         expect(appController.saveSurvey(toBeSaved)).toBe('error')
-        //     })
-        // })
+
         describe('WHEN adding a sruvey', () => {
             it('THEN the added survey should be returned the same', () => {
                 const toBeSaved: Entry = {
                     name: 'Kai',
                     weekdays: {
+                        ...getDefaultWeekdays(),
                         monday: true,
-                        tuesday: false,
-                        wedneyday: false,
-                        thursday: false,
-                        friday: false,
-                        saturday: false,
-                        sunday: false,
                     },
                 }
                 const actual = appController.addEntry(toBeSaved)
                 const expected: Entry = {
                     name: 'Kai',
                     weekdays: {
+                        ...getDefaultWeekdays(),
                         monday: true,
-                        tuesday: false,
-                        wedneyday: false,
-                        thursday: false,
-                        friday: false,
-                        saturday: false,
-                        sunday: false,
                     },
                 }
 
@@ -68,15 +48,7 @@ describe('Survey', () => {
             it('THEN the updated survey should be returned the same', () => {
                 const toBeSaved: Entry = {
                     name: 'Kai',
-                    weekdays: {
-                        monday: false,
-                        tuesday: false,
-                        wedneyday: false,
-                        thursday: false,
-                        friday: false,
-                        saturday: false,
-                        sunday: false,
-                    },
+                    weekdays: getDefaultWeekdays(),
                 }
                 appController.addEntry(toBeSaved)
                 const actual = appController.updateEntry({
@@ -90,12 +62,35 @@ describe('Survey', () => {
                 const expected: Entry = {
                     name: 'Kai',
                     weekdays: {
+                        ...getDefaultWeekdays(),
                         monday: true,
-                        tuesday: false,
-                        wedneyday: false,
-                        thursday: false,
-                        friday: false,
-                        saturday: false,
+                        sunday: true,
+                    },
+                }
+
+                expect(actual).toStrictEqual(expected)
+            })
+        })
+        describe('WHEN updating a survey', () => {
+            it('THEN the updated survey should be returned the same', () => {
+                const toBeSaved: AddEntry = {
+                    name: 'Kai',
+                    weekdays: {},
+                }
+                appController.addEntry(toBeSaved)
+                const actual = appController.updateEntry({
+                    ...toBeSaved,
+                    weekdays: {
+                        ...toBeSaved.weekdays,
+                        monday: true,
+                        sunday: true,
+                    },
+                })
+                const expected: Entry = {
+                    name: 'Kai',
+                    weekdays: {
+                        ...getDefaultWeekdays(),
+                        monday: true,
                         sunday: true,
                     },
                 }

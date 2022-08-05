@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common'
-import { Entry, Survey } from './survey'
+import { AddEntry, Entry, getDefaultWeekdays, Survey, UpdateEntry } from './survey'
 
 @Injectable()
 export class AppService {
@@ -8,22 +8,34 @@ export class AppService {
     get(): Survey {
         return this.survey
     }
+    addEntry(entry: AddEntry): Entry {
+        const newEntry = {
+            ...entry,
+            weekdays: {
+                ...getDefaultWeekdays(),
+                ...entry.weekdays,
+            },
+        }
+        this.survey.push(newEntry)
 
-    addEntry(entry: Entry): Entry {
-        this.survey.push(entry)
-
-        return entry
+        return newEntry
     }
-    updateEntry(entry: Entry): Entry {
+    updateEntry(entry: UpdateEntry): Entry {
         const currIndex = this.survey.findIndex((o) => o.name === entry.name)
         const temp = [...this.survey]
 
-        temp[currIndex] = {
+        const newEntry = {
             ...temp[currIndex],
             ...entry,
+            weekdays: {
+                ...getDefaultWeekdays(),
+                ...temp[currIndex].weekdays,
+                ...entry.weekdays,
+            },
         }
-        this.survey = temp
 
-        return entry
+        this.survey[currIndex] = newEntry
+
+        return newEntry
     }
 }
