@@ -1,5 +1,5 @@
 export type Survey = Entry[]
-interface Entry {
+export interface Entry {
     name: string
     weekdays: {
         [key in Weekdays]: boolean

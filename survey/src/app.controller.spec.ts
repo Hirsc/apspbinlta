@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing'
 import { AppController } from './app.controller'
 import { AppService } from './app.service'
-import { Survey } from './survey'
+import { Survey, Entry } from './survey'
 
 describe('Survey', () => {
     let appController: AppController
@@ -33,33 +33,75 @@ describe('Survey', () => {
         //         expect(appController.saveSurvey(toBeSaved)).toBe('error')
         //     })
         // })
-        describe('WHEN saving a sruvey', () => {
-            it('THEN the saved survey should be returned the same', () => {
-                const expectedDaysToBeSet = 5
-                const toBeSaved: Survey = [
-                    {
-                        name: 'Kai',
-                        weekdays: buildWeekdays(expectedDaysToBeSet),
+        describe('WHEN adding a sruvey', () => {
+            it('THEN the added survey should be returned the same', () => {
+                const toBeSaved: Entry = {
+                    name: 'Kai',
+                    weekdays: {
+                        monday: true,
+                        tuesday: false,
+                        wedneyday: false,
+                        thursday: false,
+                        friday: false,
+                        saturday: false,
+                        sunday: false,
                     },
-                ]
-                appController.saveSurvey(toBeSaved)
-                const result = appController.getSurvey()
-                console.log(result)
-                const actualWeekdays = result[0].weekdays
-                const amountOfSetDays = actualWeekdays.filter((w) => w === true).length
-                expect(amountOfSetDays).toBe(5)
+                }
+                const actual = appController.addEntry(toBeSaved)
+                const expected: Entry = {
+                    name: 'Kai',
+                    weekdays: {
+                        monday: true,
+                        tuesday: false,
+                        wedneyday: false,
+                        thursday: false,
+                        friday: false,
+                        saturday: false,
+                        sunday: false,
+                    },
+                }
+
+                expect(actual).toStrictEqual(expected)
+            })
+        })
+        describe('WHEN updating a sruvey', () => {
+            it('THEN the updated survey should be returned the same', () => {
+                const toBeSaved: Entry = {
+                    name: 'Kai',
+                    weekdays: {
+                        monday: false,
+                        tuesday: false,
+                        wedneyday: false,
+                        thursday: false,
+                        friday: false,
+                        saturday: false,
+                        sunday: false,
+                    },
+                }
+                appController.addEntry(toBeSaved)
+                const actual = appController.updateEntry({
+                    ...toBeSaved,
+                    weekdays: {
+                        ...toBeSaved.weekdays,
+                        monday: true,
+                        sunday: true,
+                    },
+                })
+                const expected: Entry = {
+                    name: 'Kai',
+                    weekdays: {
+                        monday: true,
+                        tuesday: false,
+                        wedneyday: false,
+                        thursday: false,
+                        friday: false,
+                        saturday: false,
+                        sunday: true,
+                    },
+                }
+
+                expect(actual).toStrictEqual(expected)
             })
         })
     })
 })
-
-function buildWeekdays(personIsAvailableAmount: number): boolean[] {
-    const result = []
-    for (let i = 0; i < 7; i++) {
-        if (result.filter((r) => r === true).length < personIsAvailableAmount) {
-            result.push(true)
-        }
-    }
-
-    return result
-}
