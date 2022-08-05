@@ -9,22 +9,37 @@ import { Button, Input } from '@mui/material'
 import Paper from '@mui/material/Paper'
 import Checkbox from '@mui/material/Checkbox'
 import { useEffect, useState } from 'react'
-import service from './service'
 import { Entry, getDefaultWeekdays, Survey, Weekdays } from './survey'
+import { useSelector } from 'react-redux'
+import { fetchEntries, getError, getStatus, postEntry, putEntry, selectAll } from './reducer'
+import { useAppDispatch } from '../store'
+import { getTotalParticipientsByColumns, Total } from './transform-rows-to-columns'
 
 
 export default function BasicTable() {
-    const [data, setData] = useState<Survey>([])
-    useEffect(() => {  
-        async function fetch(){
-            const [data] = await service.getData()
-            if(data) {
-                setData(data)
-            }
+    const dispatch = useAppDispatch()
+    const data = useSelector(selectAll)
+    const fetchStatus = useSelector(getStatus)
+    const error = useSelector(getError)
+
+    const addEntryFn = (entry: Entry) => {
+        dispatch(postEntry(entry))
+    }
+    const updateEntryFn = (entry: Entry) => {
+        dispatch(putEntry(entry))
+    }
+
+    useEffect(() => {
+        if (fetchStatus === 'idle') {
+            dispatch(fetchEntries())
         }
-        fetch()
-    }, [])
-    const columns = transformRowsToColumns(data)
+    }, [fetchStatus, dispatch])
+  
+
+    const columns = getTotalParticipientsByColumns(data)
+    if(error) {
+        console.error(error)
+    }
 
     return (
         <>
@@ -43,7 +58,7 @@ export default function BasicTable() {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {WeekdaysEntries({data, setData})}
+                        {WeekdaysEntries({data, setData: updateEntryFn})}
                         <TableRow>
                             <TableCell></TableCell>
                             {WeekdaysResults({columns})}
@@ -51,19 +66,19 @@ export default function BasicTable() {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <AddEntry setData={setData}/>
+            <AddEntry setData={addEntryFn}/>
         </>
     )
 }
 
-function AddEntry({ setData}: { setData: React.Dispatch<React.SetStateAction<Survey>>}) {
+function AddEntry({ setData}: { setData: (s: Entry) => void}) {
     const [name, setName] = useState<string>('')
     const onClick = () => {
         const addedSurvey: Entry = { 
             name, 
             weekdays: getDefaultWeekdays()
         }
-        setData((d: Survey) => [...d, addedSurvey])
+        setData(addedSurvey)
     }
     const onChange = (n: React.ChangeEvent<HTMLInputElement>) => {
         setName(n.currentTarget?.value)
@@ -76,29 +91,6 @@ function AddEntry({ setData}: { setData: React.Dispatch<React.SetStateAction<Sur
         </div>
     )
 }
-
-type Total = {
-    [key in Weekdays]: number
-}
-
-function transformRowsToColumns(rows: Survey): Total {
-    const columns = rows.reduce(
-        (acc, row: Entry) => {
-            acc['monday'] = row.weekdays.monday === true ? acc['monday'] + 1 : acc['monday']
-            acc['tuesday'] = row.weekdays.tuesday === true ? acc['tuesday'] + 1 : acc['tuesday']
-            acc['wednesday'] = row.weekdays.wednesday === true ? acc['wednesday'] + 1 : acc['wednesday']
-            acc['thursday'] = row.weekdays.thursday === true ? acc['thursday'] + 1 : acc['thursday']
-            acc['friday'] = row.weekdays.friday === true ? acc['friday'] + 1 : acc['friday']
-            acc['saturday'] = row.weekdays.saturday === true ? acc['saturday'] + 1 : acc['saturday']
-            acc['sunday'] = row.weekdays.sunday === true ? acc['sunday'] + 1 : acc['sunday']
-
-            return acc
-        }, { monday: 0, tuesday: 0, wednesday: 0, thursday: 0, friday: 0, saturday: 0, sunday: 0, }
-    )
-    
-    return columns
-}
-
 
 function WeekdaysResults({columns}:{columns: Total}): JSX.Element[] {
     const cells = Object.keys(Weekdays).map((day: string) => {
@@ -115,7 +107,7 @@ function WeekdaysResults({columns}:{columns: Total}): JSX.Element[] {
     return cells
 }
 
-function WeekdaysEntries({data, setData}:{data: Survey, setData: React.Dispatch<React.SetStateAction<Survey>>}): React.ReactNode[] {
+function WeekdaysEntries({data, setData}:{data: Survey, setData: (entry: Entry) => void}): React.ReactNode[] {
     const getCells = (row: Entry) => {
         return Object.keys(Weekdays).map((day: string) => {
             const key = `${row.name}_${day}`
@@ -125,14 +117,15 @@ function WeekdaysEntries({data, setData}:{data: Survey, setData: React.Dispatch<
                 const temp = [
                     ...data
                 ]
-                temp[currIndex] = {
+
+                const entry = {
                     ...temp[currIndex],
                     weekdays: {
                         ...row.weekdays,
                         [day]:!row.weekdays[day as Weekdays]
                     }
                 }
-                setData(temp)
+                setData(entry)
             }
             
             return (

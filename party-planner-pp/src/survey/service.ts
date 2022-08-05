@@ -1,10 +1,11 @@
 import { api } from '../api'
-import { Survey } from './survey'
+import { Entry, Survey } from './survey'
 
 export const route = '/survey'
 export default {
     getData,
-    setData,
+    addEntry,
+    updateEntry,
 }
 
 type GetData = [Survey?, Error?]
@@ -26,13 +27,13 @@ async function getData(): Promise<GetData> {
         
         return [data]
     } catch (e: unknown) {
-        return parseError(e)
+        return [,parseError(e)]
     }
 }
 
-type SetData = [number?, Error?]
+type AddEntry = [Entry?, Error?]
 
-async function setData(data: Survey[]): Promise<SetData> {
+async function addEntry(data: Entry): Promise<AddEntry> {
     try {
         const response = await fetch(`${api}${route}`,  {
             method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -46,23 +47,48 @@ async function setData(data: Survey[]): Promise<SetData> {
         if(!response.ok) {
             throw Error('ups')
         }
+        const added = await response.json()
+        
+        return [added]
+    } catch (e: unknown) {
 
-        return [response.status]
-    } catch (error: unknown) {
-
-        return parseError(error)
+        return [,parseError(e)]
     }
 }
 
-function parseError(e: unknown): [undefined, Error] {
+type UpdateEntry = [Entry?, Error?]
+async function updateEntry(data: Entry): Promise<UpdateEntry> {
+    try {
+        const response = await fetch(`${api}${route}`,  {
+            method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+            headers: {
+                'Content-Type': 'application/json'
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: JSON.stringify(data)
+        })
+
+        if(!response.ok) {
+            throw Error('ups')
+        }
+        const updated = await response.json()
+        
+        return [updated]
+    } catch (e: unknown) {
+
+        return [,parseError(e)]
+    }
+}
+
+function parseError(e: unknown): Error {
     if (typeof e === 'string') {
         e.toUpperCase() // works, `e` narrowed to string
 
-        return [,new Error(e)]
+        return new Error(e)
     } else if (e instanceof Error) {
 
-        return [,new Error(e.message)]
+        return new Error(e.message)
     }
 
-    return [, new Error('ups')]
+    return new Error('ups')
 }

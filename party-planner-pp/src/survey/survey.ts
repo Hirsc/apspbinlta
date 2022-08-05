@@ -8,6 +8,14 @@ export interface Entry {
     weekdays: EntryWeekdays
 }
 
+export type AddEntry = Omit<Entry, 'id'>
+export interface UpdateEntry {
+    name: string
+    weekdays: {
+        [key in Weekdays]?: boolean
+    }
+}
+
 export enum Weekdays {
     'monday' = 'monday',
     'tuesday' = 'tuesday',
