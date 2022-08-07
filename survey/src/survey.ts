@@ -1,20 +1,74 @@
+import { IsNotEmpty, IsOptional, Validate } from 'class-validator'
+import { registerDecorator, ValidationOptions, ValidationArguments } from 'class-validator'
+import { AppService } from './app.service'
+
+function IsUnique(validationOptions?: ValidationOptions) {
+    return function (object: Entry | AddEntry | UpdateEntry, propertyName: string) {
+        registerDecorator({
+            name: 'isUnique',
+            target: object.constructor,
+            propertyName: propertyName,
+            constraints: [],
+            options: validationOptions,
+            validator: {
+                validate(value: string, args: ValidationArguments) {
+                    const found = new AppService().findOccurence(value)
+
+                    return found === undefined
+                },
+                defaultMessage(args: ValidationArguments) {
+                    return 'Name is already in use'
+                },
+            },
+        })
+    }
+}
 export type Survey = Entry[]
-export interface Entry {
-    name: string
-    weekdays: {
-        [key in Weekdays]: boolean
+
+type EntryWeekdays = {
+    [key in Weekdays]: boolean
+}
+type OptionalEntryWeekdays = {
+    [key in Weekdays]?: boolean
+}
+
+export class Entry {
+    @IsNotEmpty()
+    @IsUnique()
+    public name: string
+
+    @IsNotEmpty()
+    public weekdays: EntryWeekdays
+
+    constructor(name: string, weekdays: EntryWeekdays) {
+        this.name = name
+        this.weekdays = weekdays
     }
 }
-export interface UpdateEntry {
-    name: string
-    weekdays: {
-        [key in Weekdays]?: boolean
+export class AddEntry {
+    @IsNotEmpty()
+    @IsUnique()
+    public name: string
+
+    @IsOptional()
+    public weekdays: OptionalEntryWeekdays
+
+    constructor(name: string, weekdays: OptionalEntryWeekdays) {
+        this.name = name
+        this.weekdays = weekdays
     }
 }
-export interface AddEntry {
-    name: string
-    weekdays: {
-        [key in Weekdays]?: boolean
+export class UpdateEntry {
+    @IsNotEmpty()
+    @IsUnique()
+    public name: string
+
+    @IsOptional()
+    public weekdays: OptionalEntryWeekdays
+
+    constructor(name: string, weekdays: OptionalEntryWeekdays) {
+        this.name = name
+        this.weekdays = weekdays
     }
 }
 

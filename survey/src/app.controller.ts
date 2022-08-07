@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Patch, Post, Put } from '@nestjs/common'
+import { Body, Controller, Get, Post, Put } from '@nestjs/common'
 import { AppService } from './app.service'
 import { AddEntry, Entry, Survey, UpdateEntry } from './survey'
 
@@ -12,10 +12,10 @@ export class AppController {
     }
     @Post()
     addEntry(@Body() entry: AddEntry): Entry {
-        return this.appService.addEntry(entry)
+        return this.appService.add(entry)
     }
     @Put()
     updateEntry(@Body() entry: UpdateEntry): Entry {
-        return this.appService.updateEntry(entry)
+        return this.appService.update(entry)
     }
 }

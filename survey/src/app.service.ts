@@ -1,14 +1,20 @@
 import { Injectable } from '@nestjs/common'
 import { AddEntry, Entry, getDefaultWeekdays, Survey, UpdateEntry } from './survey'
+import { Repository } from './repository'
+
+const survey: Survey = []
 
 @Injectable()
-export class AppService {
-    private survey: Survey = []
-
+export class AppService implements Repository<Entry> {
     get(): Survey {
-        return this.survey
+        return survey
     }
-    addEntry(entry: AddEntry): Entry {
+    findOccurence(name: string): Entry {
+        const found = survey.find((o) => o.name === name)
+
+        return found
+    }
+    add(entry: AddEntry): Entry {
         const newEntry = {
             ...entry,
             weekdays: {
@@ -16,13 +22,13 @@ export class AppService {
                 ...entry.weekdays,
             },
         }
-        this.survey.push(newEntry)
+        survey.push(newEntry)
 
         return newEntry
     }
-    updateEntry(entry: UpdateEntry): Entry {
-        const currIndex = this.survey.findIndex((o) => o.name === entry.name)
-        const temp = [...this.survey]
+    update(entry: UpdateEntry): Entry {
+        const currIndex = survey.findIndex((o) => o.name === entry.name)
+        const temp = [...survey]
 
         const newEntry = {
             ...temp[currIndex],
@@ -34,7 +40,7 @@ export class AppService {
             },
         }
 
-        this.survey[currIndex] = newEntry
+        survey[currIndex] = newEntry
 
         return newEntry
     }
