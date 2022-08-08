@@ -1,17 +1,18 @@
+import { Box, Container } from '@mui/material'
 import React from 'react'
 import './App.css'
 import { ErrorNotification } from './error/notification'
-import BasicTable from './survey/table'
+import SurveyParticipants from './survey/survey-participants'
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <h1>⚽ Party Planer - PP ⚽</h1>
-                <BasicTable></BasicTable>
-                <ErrorNotification/>
-            </header>
-        </div>
+        <>
+            <Container maxWidth="md">
+                <h1>⚽ Wann kicken ⚽</h1>
+                <SurveyParticipants />
+            </Container>
+            <ErrorNotification/>
+        </>
     )
 }
 

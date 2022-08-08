@@ -5,7 +5,7 @@ import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import { Button, Input } from '@mui/material'
+import { Box, Button, Container, Grid, Input } from '@mui/material'
 import Paper from '@mui/material/Paper'
 import Checkbox from '@mui/material/Checkbox'
 import { useEffect, useState } from 'react'
@@ -16,7 +16,7 @@ import { useAppDispatch } from '../store'
 import { getTotalParticipientsByColumns, Total } from './transform-rows-to-columns'
 
 
-export default function BasicTable() {
+export default function SurveyParticipants() {
     const dispatch = useAppDispatch()
     const data = useSelector(selectAll)
     const fetchStatus = useSelector(getStatus)
@@ -47,7 +47,7 @@ export default function BasicTable() {
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
                         <TableRow>
-                            <TableCell>KW 1</TableCell>
+                            <TableCell></TableCell>
                             <TableCell align="right">Montag</TableCell>
                             <TableCell align="right">Dienstag</TableCell>
                             <TableCell align="right">Mittwoch</TableCell>
@@ -66,7 +66,9 @@ export default function BasicTable() {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <AddEntry setData={addEntryFn}/>
+            <Box sx={{ p: 2 }}>
+                <AddEntry setData={addEntryFn}/>
+            </Box>
         </>
     )
 }
@@ -86,8 +88,14 @@ function AddEntry({ setData}: { setData: (s: Entry) => void}) {
 
     return (
         <div>
-            <Button variant="contained" onClick={onClick}/>
-            <Input type="text" onChange={onChange}/>
+            <Grid container spacing={2}>
+                <Grid item xs={3}>
+                    <Input type="text" onChange={onChange}/>
+                </Grid>
+                <Grid item xs={3}>
+                    <Button variant="contained" onClick={onClick}>Jo hab Bock</Button>
+                </Grid>
+            </Grid>
         </div>
     )
 }
