@@ -43,6 +43,9 @@ export default function SurveyParticipants() {
 
     return (
         <>
+            <Box sx={{ p: 2 }}>
+                <AddEntry setData={addEntryFn}/>
+            </Box>
             <TableContainer component={Paper}>
                 <Table sx={{ minWidth: 650 }} aria-label="simple table">
                     <TableHead>
@@ -66,9 +69,6 @@ export default function SurveyParticipants() {
                     </TableBody>
                 </Table>
             </TableContainer>
-            <Box sx={{ p: 2 }}>
-                <AddEntry setData={addEntryFn}/>
-            </Box>
         </>
     )
 }
