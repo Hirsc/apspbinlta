@@ -48,13 +48,13 @@ export default function SurveyParticipants() {
                     <TableHead>
                         <TableRow>
                             <TableCell></TableCell>
-                            <TableCell align="right">Montag</TableCell>
-                            <TableCell align="right">Dienstag</TableCell>
-                            <TableCell align="right">Mittwoch</TableCell>
-                            <TableCell align="right">Donnerstag</TableCell>
-                            <TableCell align="right">Freitag</TableCell>
-                            <TableCell align="right">Samstag</TableCell>
-                            <TableCell align="right">Sonntag</TableCell>
+                            <TableCell align="center">Montag</TableCell>
+                            <TableCell align="center">Dienstag</TableCell>
+                            <TableCell align="center">Mittwoch</TableCell>
+                            <TableCell align="center">Donnerstag</TableCell>
+                            <TableCell align="center">Freitag</TableCell>
+                            <TableCell align="center">Samstag</TableCell>
+                            <TableCell align="center">Sonntag</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -90,7 +90,7 @@ function AddEntry({ setData}: { setData: (s: Entry) => void}) {
         <div>
             <Grid container spacing={2}>
                 <Grid item xs={3}>
-                    <Input type="text" onChange={onChange}/>
+                    <Input type="text" onChange={onChange} placeholder="Dein Name"/>
                 </Grid>
                 <Grid item xs={3}>
                     <Button variant="contained" onClick={onClick}>Jo hab Bock</Button>
@@ -105,7 +105,7 @@ function WeekdaysResults({columns}:{columns: Total}): JSX.Element[] {
         const key = `columns_${day}`
         
         return (
-            <TableCell key={key} align="right">
+            <TableCell key={key} align="center">
                 {columns[day as Weekdays]}
                 {/* <Checkbox checked={!!columns[day as Weekdays]} /> */}
             </TableCell>
@@ -137,7 +137,7 @@ function WeekdaysEntries({data, setData}:{data: Survey, setData: (entry: Entry) 
             }
             
             return (
-                <TableCell key={key} align="right">
+                <TableCell key={key} align="center">
                     {row.weekdays[day as Weekdays]}
                     <Checkbox checked={row.weekdays[day as Weekdays]} onClick={onClick} />
                 </TableCell>
