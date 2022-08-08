@@ -23,7 +23,7 @@ export default function BasicTable() {
     const error = useSelector(getError)
 
     const addEntryFn = (entry: Entry) => {
-        dispatch(postEntry(entry))
+        dispatch(postEntry(entry)).unwrap()
     }
     const updateEntryFn = (entry: Entry) => {
         dispatch(putEntry(entry))
@@ -38,7 +38,7 @@ export default function BasicTable() {
 
     const columns = getTotalParticipientsByColumns(data)
     if(error) {
-        console.error(error)
+        console.log(error)
     }
 
     return (

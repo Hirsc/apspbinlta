@@ -69,18 +69,30 @@ export const getStatus = (state: RootState) => state.survey.status
 export const selectEntryById = (state: RootState, id: string) =>
     state.survey?.survey?.find(entry => entry.name === id)
 
-export const fetchEntries = createAsyncThunk<Survey>('survey/getEntries', async() => {
+export const fetchEntries = createAsyncThunk<Survey>('survey/getEntries', async(_,{ rejectWithValue }) => {
     const [data, error] = await service.getData()
+
+    if(error) {
+        return rejectWithValue(error.message[0])
+    }
 
     return data as Survey
 })
-export const putEntry = createAsyncThunk<Entry, Entry>('survey/addEntry', async(entry: Entry) => {
+export const putEntry = createAsyncThunk<Entry, Entry>('survey/addEntry', async(entry: Entry, { rejectWithValue }) => {
     const [data, error] = await service.updateEntry(entry)
+
+    if(error) {
+        return rejectWithValue(error.message[0])
+    }
 
     return data as Entry
 })
-export const postEntry = createAsyncThunk<Entry, Entry>('survey/updateEntry', async(entry: Entry) => {
+export const postEntry = createAsyncThunk<Entry, Entry>('survey/updateEntry', async(entry: Entry, { rejectWithValue }) => {
     const [data, error] = await service.addEntry(entry)
+
+    if(error) {
+        return rejectWithValue(error)
+    }
 
     return data as Entry
 })

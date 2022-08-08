@@ -1,3 +1,4 @@
+import { isObject } from 'lodash'
 import { api } from '../api'
 import { Entry, Survey } from './survey'
 
@@ -13,15 +14,14 @@ type GetData = [Survey?, Error?]
 async function getData(): Promise<GetData> {
     try {
         const response = await fetch(`${api}${route}`,  {
-            method: 'GET', // *GET, POST, PUT, DELETE, etc.
+            method: 'GET', 
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
             },
         })
 
         if(!response.ok) {
-            throw Error('ups')
+            return [,parseError(await response.json())]
         }
         const data = await response.json()
         
@@ -36,16 +36,15 @@ type AddEntry = [Entry?, Error?]
 async function addEntry(data: Entry): Promise<AddEntry> {
     try {
         const response = await fetch(`${api}${route}`,  {
-            method: 'POST', // *GET, POST, PUT, DELETE, etc.
+            method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify(data)
         })
 
         if(!response.ok) {
-            throw Error('ups')
+            return [,parseError(await response.json())]
         }
         const added = await response.json()
         
@@ -60,16 +59,15 @@ type UpdateEntry = [Entry?, Error?]
 async function updateEntry(data: Entry): Promise<UpdateEntry> {
     try {
         const response = await fetch(`${api}${route}`,  {
-            method: 'PUT', // *GET, POST, PUT, DELETE, etc.
+            method: 'PUT', 
             headers: {
                 'Content-Type': 'application/json'
-                // 'Content-Type': 'application/x-www-form-urlencoded',
             },
             body: JSON.stringify(data)
         })
 
         if(!response.ok) {
-            throw Error('ups')
+            return [,parseError(await response.json())]
         }
         const updated = await response.json()
         
@@ -82,12 +80,16 @@ async function updateEntry(data: Entry): Promise<UpdateEntry> {
 
 function parseError(e: unknown): Error {
     if (typeof e === 'string') {
-        e.toUpperCase() // works, `e` narrowed to string
+        e.toUpperCase()
 
         return new Error(e)
     } else if (e instanceof Error) {
 
         return new Error(e.message)
+    } else if (isObject(e)) {
+        if(e.hasOwnProperty('message')) {
+            return e as Error
+        }
     }
 
     return new Error('ups')

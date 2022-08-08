@@ -34,7 +34,6 @@ type OptionalEntryWeekdays = {
 
 export class Entry {
     @IsNotEmpty()
-    @IsUnique()
     public name: string
 
     @IsNotEmpty()
@@ -60,7 +59,6 @@ export class AddEntry {
 }
 export class UpdateEntry {
     @IsNotEmpty()
-    @IsUnique()
     public name: string
 
     @IsOptional()

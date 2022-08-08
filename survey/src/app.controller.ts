@@ -11,7 +11,7 @@ export class AppController {
         return this.appService.get()
     }
     @Post()
-    addEntry(@Body() entry: AddEntry): Entry {
+    addEntry(@Body() entry: AddEntry): AddEntry {
         return this.appService.add(entry)
     }
     @Put()

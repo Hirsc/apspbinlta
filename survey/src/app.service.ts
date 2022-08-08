@@ -19,7 +19,7 @@ export class AppService implements Repository<Entry> {
             ...entry,
             weekdays: {
                 ...getDefaultWeekdays(),
-                ...entry.weekdays,
+                ...entry?.weekdays,
             },
         }
         survey.push(newEntry)
@@ -35,8 +35,8 @@ export class AppService implements Repository<Entry> {
             ...entry,
             weekdays: {
                 ...getDefaultWeekdays(),
-                ...temp[currIndex].weekdays,
-                ...entry.weekdays,
+                ...temp[currIndex]?.weekdays,
+                ...entry?.weekdays,
             },
         }
 
