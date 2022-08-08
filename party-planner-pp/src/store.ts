@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
-import reducer from './survey/reducer'
+import survey from './survey/reducer'
+import error from './error/reducer'
 // ...
 
 export const store = configureStore({
     reducer: {
-        survey: reducer,
+        survey: survey,
+        error: error
     },
 })
 
