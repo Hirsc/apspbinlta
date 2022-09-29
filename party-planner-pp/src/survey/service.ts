@@ -84,7 +84,6 @@ function parseError(e: unknown): Error {
 
         return new Error(e)
     } else if (e instanceof Error) {
-
         return new Error(e.message)
     } else if (isObject(e)) {
         if(e.hasOwnProperty('message')) {
