@@ -27,4 +27,6 @@ COPY . .
 
 COPY --from=development /usr/src/app/dist ./dist
 
+ENV PORT 8080
+EXPOSE 8080
 CMD ["node", "dist/main"]
