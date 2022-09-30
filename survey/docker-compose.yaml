@@ -6,6 +6,8 @@ services:
         context: .
         target: production
         dockerfile: ./Dockerfile
+    environment:
+        - CLEAN_UP_CRON_TIMING='0 0 * * SUN'
     command: npm run start:prod
     ports:
         - 3001:3001

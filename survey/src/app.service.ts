@@ -2,11 +2,15 @@ import { Injectable } from '@nestjs/common'
 import { AddEntry, Entry, getDefaultWeekdays, Survey, UpdateEntry } from './survey'
 import { Repository } from './repository'
 
-const survey: Survey = []
+let survey: Survey = []
 
 @Injectable()
 export class AppService implements Repository<Entry> {
     get(): Survey {
+        return survey
+    }
+    reset(): Survey {
+        survey = []
         return survey
     }
     findOccurence(name: string): Entry {
