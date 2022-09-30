@@ -7,7 +7,7 @@ run-docker:
 	@docker-compose up party-planner-pp-run
 
 run:
-	npm run start
+	npm run dev
 
 dev:
-	npm run test
+	npm run dev
