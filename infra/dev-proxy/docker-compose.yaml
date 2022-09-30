@@ -4,11 +4,11 @@ networks:
         driver: bridge
 services:
     proxy:
-        image: "traefik:v2.5.2"
+        image: "traefik"
         ports:
             - "7000:7000" # open this
             - "433:433"
-            - "8080:8080" # traefik ui
+            - "8081:8080" # traefik ui
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
             - ./traefik.toml:/etc/traefik/traefik.toml
