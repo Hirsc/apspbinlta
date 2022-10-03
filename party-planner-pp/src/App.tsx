@@ -8,7 +8,7 @@ function App() {
     return (
         <>
             <Container maxWidth="md">
-                <h1>⚽ Wann kicken ⚽</h1>
+                <h1>⚽ Wann kicken? ⚽</h1>
                 <SurveyParticipants />
             </Container>
             <ErrorNotification/>
