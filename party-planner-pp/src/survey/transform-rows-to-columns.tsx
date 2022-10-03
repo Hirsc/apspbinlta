@@ -2,8 +2,11 @@ import { Entry, Survey, Weekdays } from './survey'
 import { isEmpty } from 'lodash'
 
 export type Total = {
-    [key in Weekdays]: number;
+    [key in WeekdayKey]: number;
 };
+export type Marked = WeekdayKey[]
+export type WeekdayKey = keyof typeof Weekdays;
+
 export function getTotalParticipientsByColumns(rows: Survey): Total {
     const columns = rows.reduce(
         (acc, row: Entry) => {

@@ -5,7 +5,7 @@ import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import { Box, Button, Container, Grid, Input } from '@mui/material'
+import { Box, Button, Grid, Input } from '@mui/material'
 import Paper from '@mui/material/Paper'
 import Checkbox from '@mui/material/Checkbox'
 import { useEffect, useState } from 'react'
@@ -13,7 +13,8 @@ import { Entry, getDefaultWeekdays, Survey, Weekdays } from './survey'
 import { useSelector } from 'react-redux'
 import { fetchEntries, getError, getStatus, postEntry, putEntry, selectAll } from './reducer'
 import { useAppDispatch } from '../store'
-import { getTotalParticipientsByColumns, Total } from './transform-rows-to-columns'
+import { getTotalParticipientsByColumns, Marked, Total, WeekdayKey } from './transform-rows-to-columns'
+import * as styles from './style.module.scss'
 
 
 export default function SurveyParticipants() {
@@ -37,6 +38,9 @@ export default function SurveyParticipants() {
   
 
     const columns = getTotalParticipientsByColumns(data)
+    const highestCount = Math.max(...Object.values(columns))
+    const marked = Object.keys(columns).filter((day: string) => columns[day as WeekdayKey] === highestCount) as WeekdayKey[]
+
     if(error) {
         console.log(error)
     }
@@ -64,7 +68,7 @@ export default function SurveyParticipants() {
                         {WeekdaysEntries({data, setData: updateEntryFn})}
                         <TableRow>
                             <TableCell></TableCell>
-                            {WeekdaysResults({columns})}
+                            {WeekdaysResults({columns, marked})}
                         </TableRow>
                     </TableBody>
                 </Table>
@@ -100,13 +104,16 @@ function AddEntry({ setData}: { setData: (s: Entry) => void}) {
     )
 }
 
-function WeekdaysResults({columns}:{columns: Total}): JSX.Element[] {
+function WeekdaysResults({columns, marked}:{columns: Total, marked: Marked}): JSX.Element[] {
     const cells = Object.keys(Weekdays).map((day: string) => {
         const key = `columns_${day}`
+        const isMarked = marked.includes(day as WeekdayKey)
         
         return (
-            <TableCell key={key} align="center">
-                {columns[day as Weekdays]}
+            <TableCell key={key} align="center" >
+                <span className={styles.cell} data-marked={isMarked}>
+                    {columns[day as Weekdays]}
+                </span>
                 {/* <Checkbox checked={!!columns[day as Weekdays]} /> */}
             </TableCell>
         )
@@ -119,6 +126,7 @@ function WeekdaysEntries({data, setData}:{data: Survey, setData: (entry: Entry) 
     const getCells = (row: Entry) => {
         return Object.keys(Weekdays).map((day: string) => {
             const key = `${row.name}_${day}`
+
             const onClick = () => {
                 const currIndex = data.findIndex((o) => o.name === row.name)
 

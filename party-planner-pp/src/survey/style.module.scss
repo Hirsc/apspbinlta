@@ -1,0 +1,15 @@
+.cell {
+    padding: 8px;
+    border-radius: 12px;
+    padding: 8px;
+    border-radius: 32px;
+    width: 30px;
+    display: inline-flex;
+    text-align: center;
+    justify-content: center;
+    margin-right: 0;
+    
+    &[data-marked=true] {
+        background-color: mediumturquoise;
+    }
+}
