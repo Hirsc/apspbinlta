@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux'
 import { fetchEntries, getError, getStatus, postEntry, putEntry, selectAll } from './reducer'
 import { useAppDispatch } from '../store'
 import { getTotalParticipientsByColumns, Marked, Total, WeekdayKey } from './transform-rows-to-columns'
-import * as styles from './style.module.scss'
+import styles from './style.module.scss'
 
 
 export default function SurveyParticipants() {
