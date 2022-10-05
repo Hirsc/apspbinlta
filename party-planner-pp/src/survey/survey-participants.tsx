@@ -93,10 +93,10 @@ function AddEntry({ setData}: { setData: (s: Entry) => void}) {
     return (
         <div>
             <Grid container spacing={2}>
-                <Grid item sm={3} xs={12}>
+                <Grid item md={3} sm={6} xs={12}>
                     <Input fullWidth={true} type="text" onChange={onChange} placeholder="Dein Name"/>
                 </Grid>
-                <Grid item sm={3} xs={12}>
+                <Grid item md={3} sm={6} xs={12}>
                     <Button fullWidth={true} variant="contained" onClick={onClick}>Jo hab Bock</Button>
                 </Grid>
             </Grid>
