@@ -93,11 +93,11 @@ function AddEntry({ setData}: { setData: (s: Entry) => void}) {
     return (
         <div>
             <Grid container spacing={2}>
-                <Grid item xs={3}>
-                    <Input type="text" onChange={onChange} placeholder="Dein Name"/>
+                <Grid item sm={3} xs={12}>
+                    <Input fullWidth={true} type="text" onChange={onChange} placeholder="Dein Name"/>
                 </Grid>
-                <Grid item xs={3}>
-                    <Button variant="contained" onClick={onClick}>Jo hab Bock</Button>
+                <Grid item sm={3} xs={12}>
+                    <Button fullWidth={true} variant="contained" onClick={onClick}>Jo hab Bock</Button>
                 </Grid>
             </Grid>
         </div>
